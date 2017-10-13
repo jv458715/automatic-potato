@@ -1,3 +1,6 @@
+CC=gcc
+LINK=gcc
+
 all: build doczip 
 
 build: collegemain.o college.o course.o 
