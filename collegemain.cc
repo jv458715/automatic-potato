@@ -30,6 +30,9 @@ using namespace std;
 // This function displays the menu and returns the user's choice
 int menu();
 
+/**
+ *  \brief Main file to manage College
+ */
 int main(){
     int choice;
     course c;
@@ -107,6 +110,9 @@ int main(){
 return 0;
 }
 
+/**
+ *  \brief Menu for Main
+ */
 int menu(){
     int choice;
     cout<<"Choose from the following options:\n";

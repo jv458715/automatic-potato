@@ -17,10 +17,16 @@
 #include<string>
 using namespace std;
 
+/** \class Course
+ *  \brief Default constructor
+ */
 course::course(){
     hours = 0.0;
 }
 
+/** \class Course
+ *  \brief Inputs course info
+ */
 void course::input(std::istream& ins){
     if(ins == cin){
 	cout<<"Course Number: ";
@@ -46,6 +52,9 @@ void course::input(std::istream& ins){
     }
 }
 
+/** \class Course
+ *  \brief outputs info on course
+ */
 void course::output(std::ostream& outs)const{
     if(outs == cout){
 	outs<<"Course Number:"<<course_number<<endl;
@@ -59,7 +68,9 @@ void course::output(std::ostream& outs)const{
       }
 }
 
-
+/** \class Course
+ *  \brief returns grade of gpa
+ */
 double course::get_number_grade()const{
     if(grade == "A") return 4.0;
     if(grade == "A-") return 3.667;
@@ -76,22 +87,35 @@ double course::get_number_grade()const{
     else return 0;
 }
 
+/** \class Course
+ *  \brief Sets values of course
+ */
 void course::set_course(std::string num, std::string grad, double hrs){
 	course_number = num;
 	grade = grad;
 	hours = hrs;
 }
 
+/** \class Course
+ *  \brief Input operator
+ */
 istream& operator >>(istream& ins, course& c){
     c.input(ins);
     return ins;
 }
 
+
+/** \class Course
+ *  \brief Output operator
+ */
 ostream& operator <<(ostream& outs, const course& c){
     c.output(outs);
     return outs;
 }
 
+/** \class Course
+ *  \brief Capitalizes course
+ */
 void course::upper_course(){
     for(int i =0; i<course_number.length(); ++i)
 	course_number[i] = toupper(course_number[i]);

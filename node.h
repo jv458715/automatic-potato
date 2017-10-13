@@ -15,6 +15,9 @@
 #define NODE_H
 #include "course.h"
 
+/** \class Node
+ *  \brief Used to traverse courses in College
+ */
 class node{
     public:
 	typedef course value_type;

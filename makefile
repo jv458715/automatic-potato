@@ -18,8 +18,9 @@ doczip:
 myexe: course.o college.o node.h collegemain.cc
 	g++ course.o college.o collegemain.cc -o myexe
 
-doc: *.cc *.h
-	doxygen
+doc:
+	doxygen -g index.html
+	doxygen index.html
 
 clean:
 	rm -rf *.o a.out build college.h.gch course.h.gch node.h.gch html latex archieve_file.tar.gz

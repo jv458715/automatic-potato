@@ -18,12 +18,18 @@
 #include<string>
 using namespace std;
 
+/** \class College
+ *  \brief Constructor
+ */
 College::College(std::string s){
 	name = s;
 	head = NULL;
 }
 
 
+/** \class College
+ *  \brief Destructor
+ */
 College::~College(){
 	node * rmptr;
 	while(head != NULL){
@@ -33,6 +39,9 @@ College::~College(){
 	}
 }
 
+/** \class College
+ *  \brief Constructor
+ */
 College::College(const College& other){
 	if(other.head == NULL){
 		head = NULL;
@@ -51,6 +60,9 @@ College::College(const College& other){
 	}
 }
 
+/** \class College
+ *  \brief Equals operator for College
+ */
 College& College::operator =(const College& other){
 	if(this == &other){
 		return * this;
@@ -117,7 +129,9 @@ void College::add(course& c){
 	}
 }
 
-
+/** \class College
+ *  \brief Removes course from College
+ */
 void College::remove(std::string coursename){
 	node * previous;
 	node * cursor;
@@ -158,7 +172,9 @@ void College::display(std::ostream& outs){
 	outs << "\n";
 }
 
-
+/** \class College
+ *  \brief Calculates hours of a College
+ */
 double College::hours(){
 	node * ptr;
 	ptr = head;
@@ -184,6 +200,9 @@ double College::gpa(){
 	return (sum / hours());
 }
 
+/** \class College
+ *  \brief Saves College to an output file
+ */
 void College::save(std::ostream& outs){
 	node * ptr;
 	ptr = head;
@@ -193,6 +212,9 @@ void College::save(std::ostream& outs){
 	}
 }
 
+/** \class College
+ *  \brief Loads a College from file
+ */
 void College::load(std::istream& ins){
 	course tmp;
 	ins >> tmp;
