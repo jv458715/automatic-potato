@@ -1,12 +1,18 @@
 /*********************************************************************
-	This is a class to introduce you to the syntax of working with 
+	This is a class to introduce you to the syntax of working with
 	template classes. Notice that the type being stored is completely
 	anonymous.
-	Your assignment is to implent the eight functions listed in this 
+	Your assignment is to implent the eight functions listed in this
 	header in a tarray.template file.
 		Lab 7		Fall 2014
-	John Dolan			Ohio University 
+	John Dolan			Ohio University
 ********************************************************************/
+
+/**
+ * @file   tarray.h
+ * @date   10/12/17
+ * @brief  Describes the tarray class.
+ */
 
 #include<iostream>
 
@@ -14,9 +20,9 @@ template<class T>
 class Tarray{
     public:
 	// Constructor makes an object with a dynamic array of size 5
-	Tarray(); 
+	Tarray();
 
-    	// This function puts the item into the next available spot in the 
+    	// This function puts the item into the next available spot in the
 	//array.
 	// If the array is full, resize is called.
 	void add(T item);

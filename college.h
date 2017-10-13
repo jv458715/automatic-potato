@@ -5,6 +5,12 @@
 //10/8/2015
 //********************
 
+/**
+ * @file   college.h
+ * @date   10/12/17
+ * @brief  Describes the college class.
+ */
+
 #include <iostream>
 #include <fstream>
 #include <string>

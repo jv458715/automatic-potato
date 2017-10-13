@@ -4,6 +4,13 @@
 //CS 2401
 //10/8/2015
 //********************
+
+/**
+ * @file   college.cc
+ * @date   10/12/17
+ * @brief  Implementation for the college class.
+ */
+
 #include "college.h"
 #include<cstdlib>
 #include<iostream>
@@ -69,6 +76,9 @@ College& College::operator =(const College& other){
 	return * this;
 }
 
+/** \class College
+ *  \brief Adds a course to class College
+ */
 void College::add(course& c){
 	node * previous;
 	node * cursor;
@@ -90,11 +100,11 @@ void College::add(course& c){
 		delete previous;
 	} else if(head -> data() < c){
 		cursor = head;
-		while (cursor != NULL && cursor -> data() <= c){ 
+		while (cursor != NULL && cursor -> data() <= c){
 			previous = cursor;
 			cursor = cursor-> link();
-		}	
-		if (cursor == NULL){ 
+		}
+		if (cursor == NULL){
 			cursor = new node (c);
 			cursor -> set_link(NULL);
 			previous -> set_link(cursor);
@@ -107,8 +117,9 @@ void College::add(course& c){
 	}
 }
 
+
 void College::remove(std::string coursename){
-	node * previous;	
+	node * previous;
 	node * cursor;
 	if(coursename == head->data().get_course_number()){
 		cursor = head;
@@ -129,6 +140,9 @@ void College::remove(std::string coursename){
 }
 }
 
+/** \class College
+ *  \brief Displays the courses in a College
+ */
 void College::display(std::ostream& outs){
 	node * ptr;
 	ptr = head;
@@ -156,6 +170,9 @@ double College::hours(){
 return hours;
 }
 
+/** \class College
+ *  \brief Calculates GPA of a College
+ */
 double College::gpa(){
 	node * ptr;
 	ptr = head;
@@ -165,7 +182,7 @@ double College::gpa(){
 	ptr = ptr->link();
 	}
 	return (sum / hours());
-} 
+}
 
 void College::save(std::ostream& outs){
 	node * ptr;
